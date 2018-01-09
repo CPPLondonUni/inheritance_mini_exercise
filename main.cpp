@@ -7,7 +7,7 @@
 /// Requirement: print the area of the given shape
 void print_area(const Shape& shape)
 {
-
+    std::cout << shape.get_area() << '\n';
 }
 
 /// Requirement:
@@ -17,13 +17,14 @@ void print_area(const Shape& shape)
 /// Note: you will need to use smart pointers do make this work correctly
 int main()
 {
-    /*
-    std::vector<???> shapes;
+    std::vector<std::unique_ptr<Shape>> shapes;
 
-    ...fill vector...
+    shapes.push_back(std::make_unique<Circle>(1));
+    shapes.push_back(std::make_unique<Circle>(2));
+    shapes.push_back(std::make_unique<Rectangle>(1, 2));
+    shapes.push_back(std::make_unique<Rectangle>(3, 4));
 
-    for (??? s : shapes) {
-        print_area(???);
+    for (auto& s : shapes) {
+        print_area(*s);
      }
-    */
 }
